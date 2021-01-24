@@ -1,0 +1,51 @@
+package jn.aizLab5;
+
+import java.util.Random;
+
+public class MySort extends SortZ {
+    @Override
+    protected int losuj(int w_max) {
+        Random random = new Random();
+        return random.nextInt(w_max - 0)+0;
+    }
+
+    @Override
+    public void wypelnij(int n, int wartosc_maksymalna) {
+
+    }
+
+    @Override
+    public void wypisz() {
+
+    }
+
+    @Override
+    public boolean compare(int a, int b, boolean rosnaco) {
+        return false;
+    }
+
+    @Override
+    protected void selectionsort(boolean rosnaco) {
+
+    }
+
+    @Override
+    protected void insertsort(boolean rosnaco) {
+
+    }
+
+    @Override
+    protected void quicksort(boolean rosnaco) {
+
+    }
+
+    @Override
+    protected void countsort(boolean rosnaco) {
+
+    }
+
+    @Override
+    public void sortuj(boolean rosnaco, SortMethod metoda) {
+
+    }
+}
