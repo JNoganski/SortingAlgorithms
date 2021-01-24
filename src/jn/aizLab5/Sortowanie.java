@@ -2,11 +2,14 @@ package jn.aizLab5;
 
 import java.util.Random;
 
-public class MySort extends SortZ {
+public class Sortowanie extends SortZ {
+
+    SortZ MySort = new Sortowanie();
+
     @Override
     protected int losuj(int w_max) {
         Random random = new Random();
-        return random.nextInt(w_max - 0)+0;
+        return random.nextInt(w_max - 0) + 0;
     }
 
     @Override
