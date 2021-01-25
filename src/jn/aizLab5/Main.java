@@ -5,8 +5,11 @@ public class Main {
     public static void main(String[] args) {
     Sortowanie mojeSortowanie = new Sortowanie();
 
-      //  System.out.println(mojeSortowanie.losuj(100));
     mojeSortowanie.wypelnij(10,100);
+    mojeSortowanie.wypisz();
+
+    mojeSortowanie.selectionsort(false);
+        System.out.println("Poniżej posortowane ziooooom");
     mojeSortowanie.wypisz();
     }
 }
