@@ -70,25 +70,18 @@ public class Sortowanie extends SortZ {
     }
 public class SzybkoSort{
     int rozdzielaj(int tablica[],int low, int high, boolean rosnaco ){
+        Sortowanie porównaj = new Sortowanie();
         int os = tablica[high];
         int i = low -1;
-        for (int j=low;j<high;j++){
-            if(rosnaco) {
-                if (tablica[j] < os) {
-                    i++;
-                    int mmr = tablica[i];
-                    tablica[i] = tablica[j];
-                    tablica[j] = mmr;
-                }
-            }else {
-                if (tablica[j] >= os) {
-                    i++;
-                    int mmr = tablica[i];
-                    tablica[i] = tablica[j];
-                    tablica[j] = mmr;
-                }
+        for (int j=low;j<high;j++) {
+            if (porównaj.compare(tablica[j], os, rosnaco)) {
+                i++;
+                int mmr = tablica[i];
+                tablica[i] = tablica[j];
+                tablica[j] = mmr;
             }
         }
+
         int mmr = tablica[i+1];
         tablica[i+1] = tablica[high];
         tablica[high] = mmr;
