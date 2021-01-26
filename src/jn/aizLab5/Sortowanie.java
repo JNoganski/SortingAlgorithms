@@ -56,10 +56,17 @@ public class Sortowanie extends SortZ {
             tab[i]=mmr;
         }
     }
-
     @Override
     protected void insertsort(boolean rosnaco) {
-
+    for(int i=1;i<ile;i++){
+        int wsk = tab[i];
+        int j = i-1;
+            while(j>=0 && tab[j]>wsk){
+                tab[j+1] = tab[j];
+                j--;
+            }
+            tab[j+1] = wsk;
+    }
     }
 
     @Override
