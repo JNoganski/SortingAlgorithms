@@ -10,7 +10,9 @@ public class Main {
 
         // mojeSortowanie.selectionsort(false);
         // mojeSortowanie.insertsort(false);
-        mojeSortowanie.quicksort(true);
+        //mojeSortowanie.quicksort(true);
+        mojeSortowanie.countsort(false);
+
         System.out.println("Poniżej posortowane:");
     mojeSortowanie.wypisz();
     }

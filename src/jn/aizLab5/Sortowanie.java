@@ -104,9 +104,32 @@ public class SzybkoSort{
     }
     @Override
     protected void countsort(boolean rosnaco) {
+        int wyjscie[] = new int[ile];
 
+        int liczydlo[] = new int[256];
+        for (int i = 0; i < 256; ++i) {
+            liczydlo[i] = 0;
+        }
+        for (int i = 0; i < ile; ++i) {
+            ++liczydlo[tab[i]];
+        }
+        for (int i = 1; i <= 255; ++i) {
+            liczydlo[i] += liczydlo[i - 1];
+        }
+        for (int i = ile - 1; i >= 0; i--) {
+            wyjscie[liczydlo[tab[i]] - 1] = tab[i];
+            --liczydlo[tab[i]];
+        }
+        if (compare(1, 2, rosnaco)) {
+            for (int i = 0; i < ile; ++i) {
+                tab[i] = wyjscie[i];
+            }
+        } else {
+            for (int i = ile-1; i >=0; i--) {
+                tab[i] = wyjscie[i];
+            }
+        }
     }
-
     @Override
     public void sortuj(boolean rosnaco, SortMethod metoda){
 
