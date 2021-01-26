@@ -125,8 +125,8 @@ public class SzybkoSort{
                 tab[i] = wyjscie[i];
             }
         } else {
-            for (int i = ile-1; i >=0; i--) {
-                tab[i] = wyjscie[i];
+            for (int i = 0; i <ile; i++) {
+                tab[ile-1-i] = wyjscie[i];
             }
         }
     }
