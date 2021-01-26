@@ -133,5 +133,15 @@ public class SzybkoSort{
     @Override
     public void sortuj(boolean rosnaco, SortMethod metoda){
 
+    switch (metoda){
+        case COUNTSORT: countsort(rosnaco);
+        break;
+        case INSERTION: insertsort(rosnaco);
+        break;
+        case QUICKSORT: quicksort(rosnaco);
+        break;
+        case SELECTION: selectionsort(rosnaco);
+        break;
+    }
     }
 }

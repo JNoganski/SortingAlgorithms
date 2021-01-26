@@ -11,8 +11,8 @@ public class Main {
         // mojeSortowanie.selectionsort(false);
         // mojeSortowanie.insertsort(false);
         //mojeSortowanie.quicksort(true);
-        mojeSortowanie.countsort(false);
-
+        //mojeSortowanie.countsort(false);
+        mojeSortowanie.sortuj(true, SortZ.SortMethod.SELECTION);
         System.out.println("Poniżej posortowane:");
     mojeSortowanie.wypisz();
     }
