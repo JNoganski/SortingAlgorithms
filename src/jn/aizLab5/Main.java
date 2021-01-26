@@ -8,9 +8,10 @@ public class Main {
     mojeSortowanie.wypelnij(10,100);
     mojeSortowanie.wypisz();
 
-   // mojeSortowanie.selectionsort(false);
-        mojeSortowanie.insertsort(true);
-        System.out.println("Poniżej posortowane malejąco");
+        // mojeSortowanie.selectionsort(false);
+        // mojeSortowanie.insertsort(false);
+        //mojeSortowanie.quicksort(false);
+        System.out.println("Poniżej posortowane:");
     mojeSortowanie.wypisz();
     }
 }

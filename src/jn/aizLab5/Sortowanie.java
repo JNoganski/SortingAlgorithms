@@ -61,19 +61,54 @@ public class Sortowanie extends SortZ {
     for(int i=1;i<ile;i++){
         int wsk = tab[i];
         int j = i-1;
-            while(j>=0 && tab[j]>wsk){
+            while(j>=0 && compare(wsk,tab[j],rosnaco )){
                 tab[j+1] = tab[j];
                 j--;
             }
             tab[j+1] = wsk;
     }
     }
+public class SzybkoSort{
+    int rozdzielaj(int tablica[],int low, int high, boolean rosnaco ){
+        int os = tablica[high];
+        int i = low -1;
+        for (int j=low;j<high;j++){
+            if(rosnaco) {
+                if (tablica[j] < os) {
+                    i++;
+                    int mmr = tablica[i];
+                    tablica[i] = tablica[j];
+                    tablica[j] = mmr;
+                }
+            }else {
+                if (tablica[j] >= os) {
+                    i++;
+                    int mmr = tablica[i];
+                    tablica[i] = tablica[j];
+                    tablica[j] = mmr;
+                }
+            }
+        }
+        int mmr = tablica[i+1];
+        tablica[i+1] = tablica[high];
+        tablica[high] = mmr;
 
+        return  i+1;
+    }
+    void szybki_sort(int tablica[], int low, int high, boolean rosnaco){
+     if(low<high){
+         int os = rozdzielaj(tablica,low,high,rosnaco);
+
+         szybki_sort(tablica,low,os-1,rosnaco);
+         szybki_sort(tablica,os+1,high,rosnaco);
+        }
+    }
+}
     @Override
     protected void quicksort(boolean rosnaco) {
-
+        SzybkoSort obiekt = new SzybkoSort();
+        obiekt.szybki_sort(tab, 0, ile - 1,rosnaco);
     }
-
     @Override
     protected void countsort(boolean rosnaco) {
 
